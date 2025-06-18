@@ -18,6 +18,7 @@
       position: relative;
       min-height: 100vh;
       overflow-x: hidden;
+      padding-top: 100px; /* extra padding for fixed navbar */
     }
 
     #particles-js {
@@ -28,6 +29,61 @@
       left: 0;
       z-index: -1;
       background-color: #111;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(17, 17, 17, 0.9);
+      backdrop-filter: saturate(180%) blur(5px);
+      z-index: 9999;
+      padding: 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-container {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .navbar {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.4rem;
+      padding: 10px 16px;
+      border-radius: 10px;
+      transition: color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .navbar li a:hover,
+    .navbar li a:focus {
+      color: #ff5c33;
+      box-shadow: 0 0 8px #ff5c33, 0 0 20px #ff5c33;
+      outline: none;
+    }
+
+    .nav-logo {
+      height: 48px;
+      width: auto;
+      margin-left: 40px;
+      border-radius: 6px;
     }
 
     h1 {
@@ -109,7 +165,20 @@
     }
   </style>
 </head>
-  <body>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="p.html">Partners</a></li>
+        <li><a href="c.html">Credits</a></li>
+      </ul>
+      <img class="nav-logo" src="https://femboys.lat/bk.png" alt="Logo" />
+    </div>
+  </nav>
+
   <div id="particles-js"></div>
 
   <h1>Credits</h1>
@@ -186,9 +255,9 @@
       "retina_detect": true
     });
   </script>
-  
+
   <script type='text/javascript' src='//pl26951953.profitableratecpm.com/ef/7b/e2/ef7be2ed344f8dec71442eb97b8d4cf9.js'></script>
-  
+
 </body>
 
 </html>
