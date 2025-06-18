@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credits</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .credits-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .credit-item {
+      position: relative;
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .credit-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .credit-item:hover {
+      transform: scale(1.05);
+    }
+
+    .credit-item:hover .bio {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bio {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      font-size: 14px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      color: white;
+      text-align: center;
+    }
+
+    .back-button {
+      margin-top: 50px;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Credits</h1>
+
+  <div class="credits-container">
+    <a href="https://soloo.fun" target="_blank" class="credit-item">
+      <img src="https://femboys.lat/bk.png" alt="soloo">
+      <div class="bio">soloo - main coder of fem proxy</div>
+    </a>
+
+    <a href="https://github.com/titaniumnetwork-dev/Ultraviolet" target="_blank" class="credit-item">
+      <img src="https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png" alt="szvy">
+      <div class="bio">UltraViolet - proxy backend</div>
+    </a>
+  </div>
+
+  <a href="index.html" class="back-button">Back</a>
+</body>
+
+</html>
