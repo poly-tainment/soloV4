@@ -26,8 +26,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem;
+      padding: 4rem 2rem 2rem;
       overflow-x: hidden;
+      position: relative;
     }
 
     #particles-js {
@@ -40,11 +41,54 @@
       background-color: #000000;
     }
 
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(17, 17, 17, 0.85);
+      backdrop-filter: saturate(180%) blur(5px);
+      z-index: 10000;
+      padding: 0.75rem 2rem;
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition:
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+    }
+
+    .navbar li a:hover,
+    .navbar li a:focus {
+      color: #ff5c33;
+      box-shadow:
+        0 0 8px #ff5c33,
+        0 0 20px #ff5c33;
+      outline: none;
+    }
+
     form {
-      margin-top: 5rem;
+      margin-top: 7rem;
       width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
       z-index: 1;
     }
 
@@ -90,6 +134,24 @@
           0 0 40px #ff7a1a,
           0 0 70px #ff7a1a;
       }
+    }
+
+    .search-label {
+      margin-top: 0.8rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      user-select: none;
+    }
+
+    .search-label img {
+      height: 24px;
+      width: 24px;
+      object-fit: contain;
+      border-radius: 4px;
     }
 
     .popup-overlay {
@@ -166,8 +228,20 @@
 
   <div id="particles-js"></div>
 
+  <nav>
+    <ul class="navbar">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#partners-section">Partners</a></li>
+      <li><a href="c.html">Credits</a></li>
+    </ul>
+  </nav>
+
   <form id="searchForm" action="" method="GET" autocomplete="off">
     <input id="searchInput" name="q" type="text" placeholder="Search the web freely" autocomplete="off" />
+    <label for="searchInput" class="search-label">
+      <img src="https://femboys.lat/bk.png" alt="Fem Proxy logo" />
+      Fem Proxy
+    </label>
   </form>
 
   <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle"
@@ -267,15 +341,12 @@
       const query = searchInput.value.trim();
       if (query.length === 0) return;
      
-      window.location.href = `https://ultraviolet.example.com/search?q=${encodeURIComponent(query)}`;
+      window.location.href = `https://google.com/search?q=${encodeURIComponent(query)}`;
     });
   </script>
-    
-
+  
     <script src="uv/uv.bundle.js"></script>
     <script src="uv/uv.config.js"></script>
     <script src="index.js"></script>
-
 </body>
-
 </html>
