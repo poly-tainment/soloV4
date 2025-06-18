@@ -5,6 +5,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>fem proxy :3</title>
+  <meta name="description"
+    content="Ultraviolet is a highly sophisticated proxy used for evading internet censorship or accessing websites in a controlled sandbox using the power of service-workers. Unblock sites today!" />
+  <meta name="keywords"
+    content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked" />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
@@ -24,6 +28,16 @@
       align-items: center;
       padding: 2rem;
       overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: #000000;
     }
 
     form {
@@ -78,7 +92,6 @@
       }
     }
 
-    
     .popup-overlay {
       position: fixed;
       inset: 0;
@@ -140,8 +153,7 @@
       background: #e04b20;
     }
 
-    
-    body.popup-open > :not(.popup-overlay) {
+    body.popup-open>*:not(.popup-overlay) {
       filter: blur(6px);
       pointer-events: none;
       user-select: none;
@@ -152,8 +164,10 @@
 
 <body>
 
-  <form>
-    <input id="searchInput" type="text" placeholder="Search the web freely" autocomplete="off" />
+  <div id="particles-js"></div>
+
+  <form id="searchForm" action="" method="GET" autocomplete="off">
+    <input id="searchInput" name="q" type="text" placeholder="Search the web freely" autocomplete="off" />
   </form>
 
   <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle"
@@ -165,19 +179,75 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 168,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#FFFFFF"
+        },
+        "shape": {
+          "type": "circle"
+        },
+        "opacity": {
+          "value": 0.5
+        },
+        "size": {
+          "value": 4,
+          "random": true
+        },
+        "line_linked": {
+          "enable": false
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "random",
+          "straight": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          }
+        },
+        "modes": {
+          "repulse": {
+            "distance": 100
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+
+    const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
     const popupOverlay = document.getElementById('popupOverlay');
     const popupCloseBtn = document.getElementById('popupCloseBtn');
 
-    searchInput.addEventListener('keydown', e => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        popupOverlay.classList.add('active');
-        document.body.classList.add('popup-open');
-        searchInput.blur();
-      }
-    });
+    
+    if (!sessionStorage.getItem('partnerPopupShown')) {
+      popupOverlay.classList.add('active');
+      document.body.classList.add('popup-open');
+      sessionStorage.setItem('partnerPopupShown', 'true');
+    }
 
     popupCloseBtn.addEventListener('click', () => {
       popupOverlay.classList.remove('active');
@@ -185,12 +255,26 @@
       searchInput.focus();
     });
 
-    popupOverlay.addEventListener('click', e => {
+    popupOverlay.addEventListener('click', (e) => {
       if (e.target === popupOverlay) {
         popupCloseBtn.click();
       }
     });
+
+    
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (query.length === 0) return;
+     
+      window.location.href = `https://ultraviolet.example.com/search?q=${encodeURIComponent(query)}`;
+    });
   </script>
+    
+
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="index.js"></script>
 
 </body>
 
