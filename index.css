@@ -113,3 +113,33 @@ form input:focus {
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
+  .bottom-right-image {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 200px;
+    height: auto;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  .top-right-button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background-color: #4cff9c;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 999;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .top-right-button:hover {
+    background-color: #3ed688;
+  }
