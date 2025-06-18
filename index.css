@@ -142,3 +142,13 @@ form input:focus {
   .top-right-button:hover {
     background-color: #3ed688;
   }
+
+ #particles-js {
+   position: absolute;
+    width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: 0;
+   background-color: #000000;
+ }
