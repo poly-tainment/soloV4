@@ -124,7 +124,7 @@ form input:focus {
     pointer-events: none;
   }
 
-  .top-right-button {
+  .creds {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -139,9 +139,6 @@ form input:focus {
     font-weight: bold;
   }
 
-  .top-right-button:hover {
-    background-color: #3ed688;
-  }
 
  #particles-js {
    position: absolute;
