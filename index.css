@@ -118,7 +118,7 @@ form input:focus {
     position: fixed;
     bottom: 15px;
     right: 15px;
-    width: 200px;
+    width: 500px;
     height: auto;
     z-index: 999;
     pointer-events: none;
@@ -128,7 +128,6 @@ form input:focus {
     position: fixed;
     top: 15px;
     right: 15px;
-    background-color: #4cff9c;
     color: white;
     border: none;
     padding: 10px 16px;
