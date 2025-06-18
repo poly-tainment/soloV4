@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -9,8 +9,23 @@
     }
 }
 
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 10px #3ed688,
+      0 0 25px #3ed688,
+      0 0 50px #3ed688;
+  }
+  100% {
+    box-shadow:
+      0 0 20px #3effa0,
+      0 0 40px #3effa0,
+      0 0 70px #3effa0;
+  }
+}
+
 * {
-    font-family: Roboto;
+    font-family: Montserrat;
 }
 
 body {
@@ -91,30 +106,38 @@ form {
     color: rgba(253, 253, 253, 0.514);
 }
 
+
 form input {
-    background: none;
-    font-family: inherit;
-    padding: 0px 17px;
-    height: 48px;
-    border: 1px solid rgb(255, 255, 255, .2);
-    color: var(--text-color);
-    border-radius: 3px;
-    outline: none;
-    width: 350px;
-    margin-top: 5px;
-    border-radius: 50px;
-    color: #FFF;
+  width: 250px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #3ed688;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+  outline: none;
+  transition: 
+    box-shadow 0.5s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+form input::placeholder {
+  color: #666;
 }
 
 form input:focus {
-    border: 1px solid rgba(253, 253, 253, 0.514);
-    border-radius: 6px;
-    animation: fadeInAnimation ease-in-out 0.3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+  border-color: #3ed688;
+  box-shadow:
+    0 0 8px #3ed688,
+    0 0 20px #3ed688,
+    0 0 40px #3ed688;
+  transform: scale(1.05);
+  animation: pulseGlow 2s infinite alternate ease-in-out;
 }
 
-  .bottom-right-image {
+
+.bottom-right-image {
     position: fixed;
     bottom: 15px;
     right: 15px;
@@ -122,9 +145,10 @@ form input:focus {
     height: auto;
     z-index: 999;
     pointer-events: none;
-  }
+}
 
-  .creds {
+
+.creds {
     position: fixed;
     top: 15px;
     right: 15px;
@@ -137,91 +161,15 @@ form input:focus {
     z-index: 999;
     text-decoration: none;
     font-weight: bold;
-  }
+}
 
 
- #particles-js {
-   position: absolute;
+#particles-js {
+    position: fixed;
     width: 100%;
-   height: 100%;
-   top: 0;
-   left: 0;
-   z-index: 0;
-   background-color: #000000;
- }
-
-form input {
-  width: 250px;
-  padding: 10px 14px;
-  font-size: 16px;
-  border: 2px solid #3ed688;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  outline: none;
-  transition: 
-    box-shadow 0.5s ease,
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-form input::placeholder {
-  color: #666;
-    form input {
-  width: 250px;
-  padding: 10px 14px;
-  font-size: 16px;
-  border: 2px solid #3ed688;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  outline: none;
-  transition: 
-    box-shadow 0.5s ease,
-    transform 0.3s ease,
-    border-color 0.3s ease;
-}
-
-form input::placeholder {
-  color: #666;
-}
-
-form input:focus {
-  border-color: #3ed688;
-  box-shadow:
-    0 0 8px #3ed688,
-    0 0 20px #3ed688,
-    0 0 40px #3ed688;
-  transform: scale(1.05);
-  animation: pulseGlow 2s infinite alternate ease-in-out;
-}
-
-@keyframes pulseGlow {
-  0% {
-    box-shadow:
-      0 0 10px #3ed688,
-      0 0 25px #3ed688,
-      0 0 50px #3ed688;
-  }
-  100% {
-    box-shadow:
-      0 0 20px #3effa0,
-      0 0 40px #3effa0,
-      0 0 70px #3effa0;
-  }
-}
-
-}
-
-form input:focus {
-  border-color: #3ed688;
-  box-shadow:
-    0 0 8px #3ed688,
-    0 0 20px #3ed688,
-    0 0 40px #3ed688;
-  transform: scale(1.05);
-  animation: pulseGlow 2s infinite alternate ease-in-out;
-}
-
-
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000000;
 }
