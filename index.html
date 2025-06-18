@@ -11,14 +11,14 @@
     content="proxy, web proxy, ultraviolet, service workers, unblock websites, unblock chromebook, free web proxy, proxy list, proxy sites, un block chromebook, online proxy, proxy server, proxysite, proxy youtube, bypass securly, bypass iboss, bypass lightspeed filter, holy unblocker, chromebooks, titanium network, unblock youtube, youtube proxy, unblocked youtube, youtube unblocked" />
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#434c5e" />
   <meta name="googlebot" content="index, follow, snippet" />
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
     @keyframes fadeInAnimation {
       0% {
         opacity: 0;
       }
+
       100% {
         opacity: 1;
       }
@@ -27,21 +27,21 @@
     @keyframes pulseGlow {
       0% {
         box-shadow:
-          0 0 10px #3ed688,
-          0 0 25px #3ed688,
-          0 0 50px #3ed688;
+          0 0 10px #ff5c33,
+          0 0 25px #ff5c33,
+          0 0 50px #ff5c33;
       }
 
       100% {
         box-shadow:
-          0 0 20px #3effa0,
-          0 0 40px #3effa0,
-          0 0 70px #3effa0;
+          0 0 20px #ff7a1a,
+          0 0 40px #ff7a1a,
+          0 0 70px #ff7a1a;
       }
     }
 
     * {
-      font-family: Roboto, sans-serif;
+      font-family: 'Montserrat', sans-serif !important;
     }
 
     body {
@@ -73,7 +73,7 @@
 
     .logo-wrapper .text {
       font-size: 75px;
-      font-family: "Roboto";
+      font-family: "Montserrat", sans-serif;
       color: #FFF;
     }
 
@@ -111,6 +111,7 @@
       display: flex;
       justify-content: center;
       z-index: 1;
+      margin-bottom: 15px;
     }
 
     .desc {
@@ -124,12 +125,11 @@
       color: rgba(253, 253, 253, 0.514);
     }
 
-   
     form input {
       width: 250px;
       padding: 10px 14px;
       font-size: 16px;
-      border: 2px solid #3ed688;
+      border: 2px solid #ff5c33;
       border-radius: 12px;
       background: #111;
       color: white;
@@ -137,7 +137,8 @@
       transition:
         box-shadow 0.5s ease,
         transform 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        width 0.5s ease;
     }
 
     form input::placeholder {
@@ -145,16 +146,16 @@
     }
 
     form input:focus {
-      border-color: #3ed688;
+      border-color: #ff5c33;
       box-shadow:
-        0 0 8px #3ed688,
-        0 0 20px #3ed688,
-        0 0 40px #3ed688;
-      transform: scale(1.05);
+        0 0 8px #ff5c33,
+        0 0 20px #ff5c33,
+        0 0 40px #ff5c33;
+      transform: scale(1.1);
+      width: 600px;
       animation: pulseGlow 2s infinite alternate ease-in-out;
     }
 
-    
     .bottom-right-image {
       position: fixed;
       bottom: 15px;
@@ -165,7 +166,6 @@
       pointer-events: none;
     }
 
-    
     .creds {
       position: fixed;
       top: 15px;
@@ -181,7 +181,6 @@
       font-weight: bold;
     }
 
-    
     #particles-js {
       position: fixed;
       width: 100%;
@@ -192,7 +191,6 @@
       background-color: #000000;
     }
 
-    
     .popup-overlay {
       position: fixed;
       top: 0;
@@ -215,12 +213,11 @@
       pointer-events: auto;
     }
 
-    
     .popup {
       background: #222;
       padding: 30px 40px;
       border-radius: 16px;
-      box-shadow: 0 0 25px #3ed688;
+      box-shadow: 0 0 25px #ff5c33;
       color: white;
       text-align: center;
       max-width: 320px;
@@ -232,7 +229,7 @@
       margin: 0 0 20px;
       font-weight: 900;
       font-size: 2.4rem;
-      color: #3ed688;
+      color: #ff5c33;
       text-transform: uppercase;
       letter-spacing: 3px;
     }
@@ -244,7 +241,7 @@
     }
 
     .popup button {
-      background: #3ed688;
+      background: #ff5c33;
       border: none;
       padding: 12px 28px;
       border-radius: 50px;
@@ -257,11 +254,10 @@
     }
 
     .popup button:hover {
-      background: #2dbf6a;
+      background: #e04b20;
     }
 
-    
-    body.popup-open > *:not(.popup-overlay) {
+    body.popup-open>*:not(.popup-overlay) {
       filter: blur(6px);
       user-select: none;
       pointer-events: none;
@@ -293,7 +289,6 @@
 
   <img class="bottom-right-image" src="https://femboys.lat/bk.png" alt="srry szvyyyyy" />
 
-  
   <div class="popup-overlay" id="popupOverlay" role="dialog" aria-modal="true" aria-labelledby="popupTitle"
     aria-describedby="popupDesc">
     <div class="popup">
@@ -361,7 +356,6 @@
       "retina_detect": true
     });
 
-    
     const searchInput = document.getElementById('searchInput');
     const popupOverlay = document.getElementById('popupOverlay');
     const popupCloseBtn = document.getElementById('popupCloseBtn');
@@ -369,10 +363,9 @@
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
-        
         popupOverlay.classList.add('active');
         document.body.classList.add('popup-open');
-        searchInput.blur(); 
+        searchInput.blur();
       }
     });
 
@@ -382,7 +375,6 @@
       searchInput.focus();
     });
 
-    
     popupOverlay.addEventListener('click', (e) => {
       if (e.target === popupOverlay) {
         popupCloseBtn.click();
