@@ -167,6 +167,23 @@ form input {
 
 form input::placeholder {
   color: #666;
+    form input {
+  width: 250px;
+  padding: 10px 14px;
+  font-size: 16px;
+  border: 2px solid #3ed688;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+  outline: none;
+  transition: 
+    box-shadow 0.5s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+form input::placeholder {
+  color: #666;
 }
 
 form input:focus {
@@ -178,7 +195,6 @@ form input:focus {
   transform: scale(1.05);
   animation: pulseGlow 2s infinite alternate ease-in-out;
 }
-
 
 @keyframes pulseGlow {
   0% {
@@ -193,4 +209,19 @@ form input:focus {
       0 0 40px #3effa0,
       0 0 70px #3effa0;
   }
+}
+
+}
+
+form input:focus {
+  border-color: #3ed688;
+  box-shadow:
+    0 0 8px #3ed688,
+    0 0 20px #3ed688,
+    0 0 40px #3ed688;
+  transform: scale(1.05);
+  animation: pulseGlow 2s infinite alternate ease-in-out;
+}
+
+
 }
