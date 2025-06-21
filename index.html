@@ -193,7 +193,7 @@
     </form>
   </div>
   <img
-    src="https://static.wikia.nocookie.net/siivagunner/images/f/f4/Silly_Cat_%28Character%29.png/revision/latest?cb=20241218182954"
+    src="assets/bk.png"
     class="main-img"
     alt="Silly Cat"
   />
@@ -221,15 +221,5 @@
       retina_detect: true
     });
   </script>
-  <script>
-  const form = document.getElementById('searchForm');
-  const input = document.getElementById('searchInput');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const query = encodeURIComponent(input.value.trim());
-    if (!query) return;
-    window.location.href = `404.html`;
-  });
-</script>
 </body>
 </html>
