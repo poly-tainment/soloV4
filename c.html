@@ -175,7 +175,7 @@
       <li><a href="c.html" title="Credits"><img src="icons/gear-solid.svg" /></a></li>
       <li><a href="games.html" title="Games"><img src="icons/gamepad-solid.svg" /></a></li>
     </ul>
-    <img class="nav-logo" src="https://femboys.lat/bk.png" alt="Logo" />
+    <img class="nav-logo" src="assets/q.gif" alt="Logo" />
   </div>
 </nav>
 
@@ -239,9 +239,9 @@
   <h1>Credits</h1>
 
   <div class="credits-container">
-    <a href="https://soloo.fun" target="_blank" class="credit-item">
-      <img src="https://femboys.lat/bk.png" alt="soloo" />
-      <div class="bio">soloo - main coder of fem proxy</div>
+    <a href="https://soloo.win" target="_blank" class="credit-item">
+      <img src="assets/q.gif" alt="soloo" />
+      <div class="bio">soloo - the owner and developer</div>
     </a>
 
     <a href="https://github.com/titaniumnetwork-dev/Ultraviolet" target="_blank" class="credit-item">
@@ -253,61 +253,27 @@
   <a href="index.html" class="back-button">Back</a>
 
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
+<script>
     particlesJS("particles-js", {
-      "particles": {
-        "number": {
-          "value": 168,
-          "density": {
-            "enable": true,
-            "value_area": 800
-          }
+      particles: {
+        number: { value: 80 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        size: { value: 4, random: true },
+        move: { enable: true, speed: 2 },
+        line_linked: { enable: false }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
         },
-        "color": {
-          "value": "#FFFFFF"
-        },
-        "shape": {
-          "type": "circle"
-        },
-        "opacity": {
-          "value": 1
-        },
-        "size": {
-          "value": 4,
-          "random": true
-        },
-        "line_linked": {
-          "enable": false
-        },
-        "move": {
-          "enable": true,
-          "speed": 2,
-          "direction": "random",
-          "straight": false,
-          "out_mode": "out"
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
         }
       },
-      "interactivity": {
-        "events": {
-          "onhover": {
-            "enable": true,
-            "mode": "repulse"
-          },
-          "onclick": {
-            "enable": true,
-            "mode": "push"
-          }
-        },
-        "modes": {
-          "repulse": {
-            "distance": 100
-          },
-          "push": {
-            "particles_nb": 4
-          }
-        }
-      },
-      "retina_detect": true
+      retina_detect: true
     });
   </script>
 

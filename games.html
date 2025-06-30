@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Games | Fem Proxy</title>
+  <title>solo central v4 - games</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     html, body {
@@ -117,7 +117,7 @@
       <li><a href="c.html" title="Credits"><img src="icons/gear-solid.svg" /></a></li>
       <li><a href="games.html" title="Games"><img src="icons/gamepad-solid.svg" /></a></li>
     </ul>
-    <img class="nav-logo" src="https://femboys.lat/bk.png" alt="Logo" />
+    <img class="nav-logo" src="assets/q.gif" alt="Logo" />
   </div>
 </nav>
 
@@ -251,11 +251,11 @@
       <p>chrenobyl by cod 😭✌️</p>
         </div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
     particlesJS("particles-js", {
       particles: {
-        number: { value: 168 },
+        number: { value: 80 },
         color: { value: "#ffffff" },
         shape: { type: "circle" },
         size: { value: 4, random: true },
@@ -274,6 +274,37 @@
       },
       retina_detect: true
     });
+
+    const overlay = document.getElementById('name-overlay');
+    const input = document.getElementById('name-input');
+    const welcome = document.getElementById('welcome-msg');
+
+    function showWelcome(name) {
+      welcome.textContent = `Hey ${name}, welcome to v4!`;
+      welcome.style.display = 'block';
+    }
+
+    const name = localStorage.getItem('username');
+    if (name) {
+      document.body.classList.remove('blurred');
+      document.body.classList.add('fade-in');
+      overlay.style.display = 'none';
+      showWelcome(name);
+    } else {
+      input.focus();
+      input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          const val = input.value.trim();
+          if (val) {
+            localStorage.setItem('username', val);
+            overlay.style.display = 'none';
+            document.body.classList.remove('blurred');
+            document.body.classList.add('fade-in');
+            showWelcome(val);
+          }
+        }
+      });
+    }
   </script>
 </body>
 </html>

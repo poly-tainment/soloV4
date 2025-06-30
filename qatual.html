@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>solo central v4 - Search</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  html, body {
+    margin: 0; padding: 0;
+    height: 100%;
+    background: black;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  nav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(17, 17, 17, 0.9);
+    backdrop-filter: saturate(180%) blur(5px);
+    z-index: 9999;
+    padding: 16px 24px;
+    border-radius: 12px;
+    max-width: 320px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+  .navbar {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+  }
+  .navbar li a img {
+    height: 28px;
+    width: 28px;
+    filter: invert(100%) brightness(200%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  .navbar li a:hover img,
+  .navbar li a:focus img {
+    filter: invert(85%) drop-shadow(0 0 6px #ff5c33);
+    transform: scale(1.1);
+  }
+  .nav-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+  #iframe-wrapper {
+    flex: 1;
+    margin-top: 20px;
+  }
+  iframe {
+    border: none;
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-container">
+    <ul class="navbar">
+      <li><a href="index.html" title="Home"><img src="icons/house-solid.svg" alt="Home" /></a></li>
+      <li><a href="p.html" title="Partners"><img src="icons/tool.svg" alt="Partners" /></a></li>
+      <li><a href="c.html" title="Credits"><img src="icons/gear-solid.svg" alt="Credits" /></a></li>
+      <li><a href="games.html" title="Games"><img src="icons/gamepad-solid.svg" alt="Games" /></a></li>
+    </ul>
+    <img class="nav-logo" src="assets/q.gif" alt="Logo" />
+  </div>
+</nav>
+
+<div id="iframe-wrapper">
+  <iframe id="search-frame" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+</div>
+
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const q = urlParams.get('q') || '';
+  const iframe = document.getElementById('search-frame');
+  if(q.trim()) {
+    const encodedQuery = encodeURIComponent(q);
+    iframe.src = `https://priv.au/search?q=${encodedQuery}`;
+  } else {
+    iframe.src = 'about:blank';
+  }
+</script>
+</body>
+</html>
